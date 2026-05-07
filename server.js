@@ -35,8 +35,12 @@ const users = {
     juan: {
     passwordHash: '$2b$10$Ouc7AkX2hBzmtwe/7OrtbO2Vc3kp7NwSw.HktdOuv8FRhyxtfDeaC',
     name: 'Juan Perez'
-  }
+  },
   
+      noravarela: {
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    name: 'Nora Varela'
+  }
   // Agrega más usuarios aquí: 'maria': { passwordHash: '...', name: 'María López' }
 };
 
