@@ -19,7 +19,7 @@ app.use(session({
   cookie: {
     secure: true, // Requiere HTTPS en prod
     httpOnly: true,
-    maxAge: 8 * 60 * 60 * 1000 // 8 horas
+    maxAge: 8 * 60 * 60 * 1000, // 8 horas
     sameSite: 'none' // ✅ Necesario para Render
   }
 }));
