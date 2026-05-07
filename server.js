@@ -13,13 +13,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Sesiones seguras
 app.use(session({
-  secret: process.env.SESSION_SECRET || 'cambiar-en-produccion',
+  secret: process.env.SESSION_SECRET || 'fallback-secret',
   resave: false,
   saveUninitialized: false,
   cookie: {
-    secure: process.env.NODE_ENV === 'production', // Requiere HTTPS en prod
+    secure: true, // Requiere HTTPS en prod
     httpOnly: true,
     maxAge: 8 * 60 * 60 * 1000 // 8 horas
+    sameSite: 'none' // ✅ Necesario para Render
   }
 }));
 
@@ -90,7 +91,7 @@ app.get('/', (req, res) => {
   res.redirect('/login.html');
 });
 
-app.listen(PORT, '0.0.0.0', () => {
+app.listen(PORT, () => {
   console.log(`✅ Portal listo en http://localhost:${PORT}`);
   console.log(`🔒 En producción: usa HTTPS y cambia SESSION_SECRET`);
 });

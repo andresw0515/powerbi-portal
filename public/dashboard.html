@@ -18,6 +18,7 @@
     .btn:hover { background: #106ebe; }
     .logout { color: #666; text-decoration: none; }
     #loading { text-align: center; padding: 2rem; color: #666; }
+    .error-msg { background: #fee; color: #c00; padding: 1rem; border-radius: 6px; margin: 1rem 0; text-align: center; }
   </style>
 </head>
 <body>
@@ -28,35 +29,89 @@
   <div class="container">
     <p id="welcomeMsg">Cargando...</p>
     <div id="loading">Verificando acceso...</div>
+    <div id="errorContainer"></div>
     <div class="grid" id="dashboardGrid"></div>
   </div>
 
   <script>
     async function init() {
       try {
-        const userRes = await fetch('/api/me');
-        if (!userRes.ok) return window.location.href = '/login.html';
+        console.log(' Iniciando carga de dashboard...');
+        
+        // Paso 1: Verificar autenticación
+        console.log('📡 Fetching /api/me...');
+        const userRes = await fetch('/api/me', {
+          credentials: 'include', // 🔑 CRUCIAL para Render/HTTPS
+          headers: { 'Accept': 'application/json' }
+        });
+        
+        console.log('📊 userRes status:', userRes.status);
+        
+        if (!userRes.ok) {
+          console.error('❌ No autorizado, redirigiendo a login');
+          return window.location.href = '/login.html';
+        }
+        
         const user = await userRes.json();
+        console.log('✅ Usuario autenticado:', user.name);
         document.getElementById('welcomeMsg').textContent = `Bienvenido, ${user.name}`;
         document.getElementById('loading').style.display = 'none';
 
-        const res = await fetch('/api/dashboards');
+        // Paso 2: Cargar dashboards
+        console.log('📡 Fetching /api/dashboards...');
+        const res = await fetch('/api/dashboards', {
+          credentials: 'include', // 🔑 CRUCIAL para Render/HTTPS
+          headers: { 'Accept': 'application/json' }
+        });
+        
+        console.log('📊 dashboardsRes status:', res.status);
+        
+        if (!res.ok) {
+          throw new Error(`Error del servidor: ${res.status}`);
+        }
+        
         const dashboards = await res.json();
+        console.log('✅ Dashboards recibidos:', dashboards.length);
+        
         const grid = document.getElementById('dashboardGrid');
-
-        dashboards.forEach(d => {
-          grid.innerHTML += `
-            <div class="card">
+        
+        if (!dashboards || dashboards.length === 0) {
+          grid.innerHTML = '<p style="text-align:center;color:#666;grid-column:1/-1;">No hay dashboards disponibles</p>';
+        } else {
+          dashboards.forEach(d => {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
               <h3>${d.name}</h3>
               <p>${d.description}</p>
               <a href="${d.link}" target="_blank" class="btn">Abrir Dashboard →</a>
-            </div>`;
-        });
+            `;
+            grid.appendChild(card);
+          });
+        }
+        
+        console.log('✅ Dashboard cargado exitosamente');
+        
       } catch (err) {
-        document.getElementById('loading').textContent = 'Error al cargar. Recarga la página.';
+        console.error(' Error en init():', err);
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('errorContainer').innerHTML = `
+          <div class="error-msg">
+            <strong>⚠️ Error al cargar</strong><br>
+            <small>${err.message}</small><br><br>
+            <button onclick="location.reload()" style="padding:0.5rem 1rem;cursor:pointer;background:#0078d4;color:white;border:none;border-radius:4px;">🔄 Recargar</button>
+            <button onclick="window.location.href='/logout'" style="padding:0.5rem 1rem;cursor:pointer;background:#666;color:white;border:none;border-radius:4px;margin-left:0.5rem;">🚪 Re-login</button>
+          </div>
+        `;
       }
     }
-    init();
+    
+    // Ejecutar cuando el DOM esté listo
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
   </script>
 </body>
 </html>
