@@ -47,7 +47,14 @@ const dashboards = [
     name: '📊 Ventas OT y Cotización',
     description: 'Seguimiento de órdenes de trabajo y cotizaciones activas.',
     link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZTE5MGVhNWQtNzYwYS00YmE0LTljNzUtOWMzM2E1MThlYjYwIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&embedImagePlaceholder=true'
+  },
+    {
+    id: 'inventario',
+    name: '📊 Inventario Disponible',
+    description: 'Seguimiento al inventario de la compañia.',
+    link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiMGIzMTE5MDMtOWY1My00YjBkLWExOGUtNzJjY2E4MzdjNGE1IiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9'
   }
+  
   // Agrega más aquí copiando el bloque
 ];
 
