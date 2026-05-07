@@ -60,7 +60,7 @@ const requireAuth = (req, res, next) => {
     return res.redirect('/login.html');
   }
   next();
-};s
+};
 // Rutas
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
