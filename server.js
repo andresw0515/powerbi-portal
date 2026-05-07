@@ -20,7 +20,7 @@ app.use(session({
     secure: true, // Requiere HTTPS en prod
     httpOnly: true,
     maxAge: 8 * 60 * 60 * 1000, // 8 horas
-    sameSite: 'none' // ✅ Necesario para Render
+    sameSite: 'lax' // ✅ Necesario para Render
   }
 }));
 
@@ -49,12 +49,18 @@ const dashboards = [
   // Agrega más aquí copiando el bloque
 ];
 
-// Middleware de protección
+// Middleware de protección (CORREGIDO)
 const requireAuth = (req, res, next) => {
-  if (!req.session?.isAuthenticated) return res.redirect('/login.html');
+  if (!req.session?.isAuthenticated) {
+    // Si es petición API (fetch), retornar JSON 401
+    if (req.xhr || req.headers.accept?.indexOf('json') > -1) {
+      return res.status(401).json({ error: 'No autorizado' });
+    }
+    // Si es navegación normal, redirigir al login
+    return res.redirect('/login.html');
+  }
   next();
-};
-
+};s
 // Rutas
 app.post('/login', async (req, res) => {
   const { username, password } = req.body;
