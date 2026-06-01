@@ -28,13 +28,9 @@ app.use(session({
 
 // Usuarios (en producción usa DB real como SQLite/PostgreSQL)
 const users = {
-  admin: {
-    passwordHash: process.env.ADMIN_PASSWORD_HASH,
-    name: 'Administrador'
-  },
-    juan: {
-    passwordHash: '$2b$10$Ouc7AkX2hBzmtwe/7OrtbO2Vc3kp7NwSw.HktdOuv8FRhyxtfDeaC',
-    name: 'Juan Perez'
+  andreswong: {
+    passwordHash: '$2b$10$UnUSCbGaburMp1ivUTiLU.2I8RpkWGNzxJXBsC56Jec0Ki0VV2czy',
+    name: 'Andrés Wong'
   },
   
       noravarela: {
