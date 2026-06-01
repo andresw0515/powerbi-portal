@@ -40,6 +40,51 @@ const users = {
       noravarela: {
     passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
     name: 'Nora Varela'
+  },
+
+        ricardovivas: {
+    passwordHash: '$2b$10$hPcHCr1CUIjPOJJgpcMozeNPeA8M1UEasvhB8MyPjBEqOJJ3lKYoO',
+    name: 'Ricardo Vivas'
+  },
+
+        gustavourrutia: {
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    name: 'Nora Varela'
+  },
+
+        luiscalderon: {
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    name: 'Nora Varela'
+  },
+
+        ernestomunch: {
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    name: 'Nora Varela'
+  },
+
+        victorordonez: {
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    name: 'Nora Varela'
+  },
+
+        brayanvalencia: {
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    name: 'Nora Varela'
+  },
+
+        ricardosalguero: {
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    name: 'Nora Varela'
+  },
+
+        jennypalacios: {
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    name: 'Nora Varela'
+  },
+
+        javierramos: {
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    name: 'Nora Varela'
   }
   // Agrega más usuarios aquí: 'maria': { passwordHash: '...', name: 'María López' }
 };
