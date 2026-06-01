@@ -104,8 +104,8 @@ const dashboards = [
     link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiMGIzMTE5MDMtOWY1My00YjBkLWExOGUtNzJjY2E4MzdjNGE1IiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9'
   },
       {
-    id: 'inventario',
-    name: '📊 Inventario Disponible',
+    id: 'memos',
+    name: '📊 Memorandos',
     description: 'Seguimiento al inventario de la compañia.',
     link: 'https://app.powerbi.com/view?r=eyJrIjoiY2FlZGVkM2QtOWZjNC00YmMzLWIzY2ItMGVlYTA4MTA0ODlhIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&embedImagePlaceholder=true'
   }
