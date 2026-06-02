@@ -49,13 +49,13 @@ const users = {
   },
 
         luiscalderon: {
-    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
+    passwordHash: '$2b$10$G.4urDT/bPE3V5nQoii01.chzaTQguSJUCDECDCsv4u/9OFwczlyC',
     name: 'Nora Varela'
   },
 
         ernestomunch: {
     passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
-    name: 'Nora Varela'
+    name: 'Luis Calderon'
   },
 
         victorordonez: {
