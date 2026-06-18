@@ -121,6 +121,7 @@ app.post('/login', async (req, res) => {
       req.session.isAuthenticated = true;
       req.session.username = username;
       req.session.name = user.name;
+      req.session.roles = user.roles; //  NUEVO: Guardar roles en sesión
       return res.redirect('/dashboard.html');
     }
     res.redirect('/login.html?error=1');
@@ -134,7 +135,18 @@ app.get('/api/me', requireAuth, (req, res) => {
 });
 
 app.get('/api/dashboards', requireAuth, (req, res) => {
-  res.json(dashboards);
+  const userRoles = req.session.roles || [];
+  const esAdmin = userRoles.includes('admin');
+
+  const dashboardsVisibles = dashboards.filter(d => {
+    if (esAdmin) return true; // ✅ Admin ve TODOS los dashboards
+    
+    // ✅ Otros usuarios: solo ven si comparten al menos 1 rol
+    const dashboardRoles = d.roles || [];
+    return dashboardRoles.some(rol => userRoles.includes(rol));
+  });
+
+  res.json(dashboardsVisibles);
 });
 
 app.get('/logout', (req, res) => {
