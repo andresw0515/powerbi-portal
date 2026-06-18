@@ -65,7 +65,7 @@ const users = {
           andresmunoz: {
     passwordHash: '$2b$10$rcy88AiD.evjMm61LwWfHup0MUH9rZU/dQ/FX47kuNchZQlj.g9ze', //5503
     name: 'Andres Muñoz',
-    roles: ['compras','admin']
+    roles: ['admin']
   }
   // Agrega más usuarios aquí: 'maria': { passwordHash: '...', name: 'María López' }
 };
