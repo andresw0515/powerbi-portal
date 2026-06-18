@@ -29,62 +29,38 @@ app.use(session({
 // Usuarios (en producción usa DB real como SQLite/PostgreSQL)
 const users = {
   andreswong: {
-    passwordHash: '$2b$10$UnUSCbGaburMp1ivUTiLU.2I8RpkWGNzxJXBsC56Jec0Ki0VV2czy',
-    name: 'Andrés Wong'
+    passwordHash: '$2b$10$UnUSCbGaburMp1ivUTiLU.2I8RpkWGNzxJXBsC56Jec0Ki0VV2czy', //computador15
+    name: 'Andrés Wong',
+    roles: ['admin']
   },
   
       noravarela: {
-    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
-    name: 'Nora Varela'
+    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO', //MariaAleja*2023
+    name: 'Nora Varela',
+    roles: ['admin']
   },
 
         ricardovivas: {
-    passwordHash: '$2b$10$hPcHCr1CUIjPOJJgpcMozeNPeA8M1UEasvhB8MyPjBEqOJJ3lKYoO',
-    name: 'Ricardo Vivas'
+    passwordHash: '$2b$10$hPcHCr1CUIjPOJJgpcMozeNPeA8M1UEasvhB8MyPjBEqOJJ3lKYoO', //12345
+    name: 'Ricardo Vivas',
+    roles: ['admin']
   },
 
         gustavourrutia: {
-    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
-    name: 'Nora Varela'
+    passwordHash: '$2b$10$nyNciK3PP8fX3kot6YCRrez/czSqWbOOrC7/07SBda0XVb2bnAfUy', //Padre@14
+    name: 'Gustavo Urrutia',
+    roles: ['admin']
   },
 
         luiscalderon: {
-    passwordHash: '$2b$10$G.4urDT/bPE3V5nQoii01.chzaTQguSJUCDECDCsv4u/9OFwczlyC',
-    name: 'Nora Varela'
-  },
-
-        ernestomunch: {
-    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
-    name: 'Luis Calderon'
-  },
-
-        victorordonez: {
-    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
-    name: 'Nora Varela'
-  },
-
-        brayanvalencia: {
-    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
-    name: 'Nora Varela'
-  },
-
-        ricardosalguero: {
-    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
-    name: 'Nora Varela'
-  },
-
-        jennypalacios: {
-    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
-    name: 'Nora Varela'
-  },
-
-        javierramos: {
-    passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
-    name: 'Nora Varela'
+    passwordHash: '$2b$10$G.4urDT/bPE3V5nQoii01.chzaTQguSJUCDECDCsv4u/9OFwczlyC', //lacc0625
+    name: 'Luis Calderon',
+    roles: ['admin']
   },
         marcelacartagena: {
-    passwordHash: '$2b$10$cb.dYGCXaht7bH7eno3sE.RWiT.fAYoc4BLVuA0a4udC9AwRb5b0a',
-    name: 'Nora Varela'
+    passwordHash: '$2b$10$cb.dYGCXaht7bH7eno3sE.RWiT.fAYoc4BLVuA0a4udC9AwRb5b0a', //Celco2025*
+    name: 'Marcela Cartagena',
+    roles: ['compras']
   }
   // Agrega más usuarios aquí: 'maria': { passwordHash: '...', name: 'María López' }
 };
@@ -95,25 +71,29 @@ const dashboards = [
     id: 'ventas',
     name: '📊 Ventas OT y Cotización',
     description: 'Seguimiento de órdenes de trabajo y cotizaciones activas.',
-    link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZTE5MGVhNWQtNzYwYS00YmE0LTljNzUtOWMzM2E1MThlYjYwIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&embedImagePlaceholder=true'
+    link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZTE5MGVhNWQtNzYwYS00YmE0LTljNzUtOWMzM2E1MThlYjYwIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&embedImagePlaceholder=true',
+    roles: ['ventas','admin']
   },
     {
     id: 'inventario',
     name: '📊 Inventario Disponible',
     description: 'Seguimiento al inventario de la compañia.',
-    link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiMGIzMTE5MDMtOWY1My00YjBkLWExOGUtNzJjY2E4MzdjNGE1IiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9'
+    link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiMGIzMTE5MDMtOWY1My00YjBkLWExOGUtNzJjY2E4MzdjNGE1IiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9',
+    roles: ['compras','admin']
   },
       {
     id: 'memos',
     name: '📊 Memorandos',
     description: 'Seguimiento a los memos realizados',
-    link: 'https://app.powerbi.com/view?r=eyJrIjoiY2FlZGVkM2QtOWZjNC00YmMzLWIzY2ItMGVlYTA4MTA0ODlhIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&embedImagePlaceholder=true'
+    link: 'https://app.powerbi.com/view?r=eyJrIjoiY2FlZGVkM2QtOWZjNC00YmMzLWIzY2ItMGVlYTA4MTA0ODlhIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&embedImagePlaceholder=true',
+    roles: ['compras','admin',]
   },
         {
     id: 'consumos',
     name: '📊 Compras',
     description: 'Seguimiento a los componentes pendientes de comprar.',
-    link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZGY4OTEwODMtYWIzZi00YzFhLTljMWMtNzUxNDVmZDNjZWFmIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9'
+    link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZGY4OTEwODMtYWIzZi00YzFhLTljMWMtNzUxNDVmZDNjZWFmIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9',
+    roles: ['compras','admin']
   }
   // Agrega más aquí copiando el bloque
 ];
