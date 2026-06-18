@@ -81,6 +81,10 @@ const users = {
         javierramos: {
     passwordHash: '$2b$10$3PZBUci9S7yKl64jmd2Z8ufiiRoW6aUtaGZmlDM.INm5E9Nbat4tO',
     name: 'Nora Varela'
+  },
+        marcelacartagena: {
+    passwordHash: '$2b$10$cb.dYGCXaht7bH7eno3sE.RWiT.fAYoc4BLVuA0a4udC9AwRb5b0a',
+    name: 'Nora Varela'
   }
   // Agrega más usuarios aquí: 'maria': { passwordHash: '...', name: 'María López' }
 };
@@ -102,12 +106,17 @@ const dashboards = [
       {
     id: 'memos',
     name: '📊 Memorandos',
-    description: 'Seguimiento al inventario de la compañia.',
+    description: 'Seguimiento a los memos realizados',
     link: 'https://app.powerbi.com/view?r=eyJrIjoiY2FlZGVkM2QtOWZjNC00YmMzLWIzY2ItMGVlYTA4MTA0ODlhIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&embedImagePlaceholder=true'
+  },
+        {
+    id: 'consumos',
+    name: '📊 Compras',
+    description: 'Seguimiento a los componentes pendientes de comprar.',
+    link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZGY4OTEwODMtYWIzZi00YzFhLTljMWMtNzUxNDVmZDNjZWFmIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9'
   }
   // Agrega más aquí copiando el bloque
 ];
-
 // Middleware de protección (CORREGIDO)
 const requireAuth = (req, res, next) => {
   if (!req.session?.isAuthenticated) {
