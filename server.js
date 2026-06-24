@@ -65,7 +65,7 @@ const users = {
           andresmunoz: {
     passwordHash: '$2b$10$rcy88AiD.evjMm61LwWfHup0MUH9rZU/dQ/FX47kuNchZQlj.g9ze', //5503
     name: 'Andres Muñoz',
-    roles: ['admin']
+    roles: ['compras']
   }
   // Agrega más usuarios aquí: 'maria': { passwordHash: '...', name: 'María López' }
 };
@@ -99,7 +99,15 @@ const dashboards = [
     description: 'Seguimiento a los componentes pendientes de comprar.',
     link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZGY4OTEwODMtYWIzZi00YzFhLTljMWMtNzUxNDVmZDNjZWFmIiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9',
     roles: ['compras','admin']
+  },
+          {
+    id: 'facturacion',
+    name: '📊 Facturacion',
+    description: 'Seguimiento a las facturas realizadas.',
+    link: 'https://app.powerbi.com/view?r=eyJrIjoiYWQ1NTk1NWYtMGQ4OC00M2I2LWE5ZjctNmExNWY4ODlkZjI5IiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&pageName=15c2b90968420089a418',
+    roles: ['admin']
   }
+  // Agrega más aquí copiando el bloque
   // Agrega más aquí copiando el bloque
 ];
 // Middleware de protección (CORREGIDO)
