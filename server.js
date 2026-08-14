@@ -108,9 +108,9 @@ const dashboards = [
     roles: ['admin']
   },          
           {
-    id: 'facturacion',
-    name: '📊 Facturacion',
-    description: 'Seguimiento a las facturas realizadas.',
+    id: 'inventario sin costo',
+    name: '📊 Consulta Codigos',
+    description: 'Consultar el codigo de los items del inventario',
     link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZGFjNzEwMGItODlkNi00M2RmLThjYTYtYzQ4YWNlODZlY2E0IiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&pageName=3982d107d0c7b4183cd3',
     roles: ['admin']
   }
