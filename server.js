@@ -66,6 +66,11 @@ const users = {
     passwordHash: '$2b$10$rcy88AiD.evjMm61LwWfHup0MUH9rZU/dQ/FX47kuNchZQlj.g9ze', //5503
     name: 'Andres Muñoz',
     roles: ['compras']
+  },
+            tenico: {
+    passwordHash: '$2b$10$AyCLmOSN6ZWQiBojN1vgu.hvqwFzjqsDZYwZ3.uL0kL/w59uPIzoy', //Celco*1962
+    name: 'Departamento Tecnico',
+    roles: ['compras']
   }
   // Agrega más usuarios aquí: 'maria': { passwordHash: '...', name: 'María López' }
 };
