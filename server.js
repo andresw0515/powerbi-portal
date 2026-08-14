@@ -67,10 +67,10 @@ const users = {
     name: 'Andres Muñoz',
     roles: ['compras']
   },
-            tenico: {
+            tecnico: {
     passwordHash: '$2b$10$AyCLmOSN6ZWQiBojN1vgu.hvqwFzjqsDZYwZ3.uL0kL/w59uPIzoy', //Celco*1962
     name: 'Departamento Tecnico',
-    roles: ['compras']
+    roles: ['tecnico']
   }
   // Agrega más usuarios aquí: 'maria': { passwordHash: '...', name: 'María López' }
 };
@@ -117,7 +117,7 @@ const dashboards = [
     name: '📊 Consulta Codigos',
     description: 'Consultar el codigo de los items del inventario',
     link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZGFjNzEwMGItODlkNi00M2RmLThjYTYtYzQ4YWNlODZlY2E0IiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&pageName=3982d107d0c7b4183cd3',
-    roles: ['admin']
+    roles: ['admin','tecnico']
   }
   // Agrega más aquí copiando el bloque
 ];
