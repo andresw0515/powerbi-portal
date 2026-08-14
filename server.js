@@ -106,8 +106,14 @@ const dashboards = [
     description: 'Seguimiento a las facturas realizadas.',
     link: 'https://app.powerbi.com/view?r=eyJrIjoiYWQ1NTk1NWYtMGQ4OC00M2I2LWE5ZjctNmExNWY4ODlkZjI5IiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&pageName=15c2b90968420089a418',
     roles: ['admin']
+  },          
+          {
+    id: 'facturacion',
+    name: '📊 Facturacion',
+    description: 'Seguimiento a las facturas realizadas.',
+    link: 'https://app.fabric.microsoft.com/view?r=eyJrIjoiZGFjNzEwMGItODlkNi00M2RmLThjYTYtYzQ4YWNlODZlY2E0IiwidCI6IjQ4ODdlZTBhLTk2M2UtNDk3MS04NTk5LWNhZGZlMTMwOTdiYiJ9&pageName=3982d107d0c7b4183cd3',
+    roles: ['admin']
   }
-  // Agrega más aquí copiando el bloque
   // Agrega más aquí copiando el bloque
 ];
 // Middleware de protección (CORREGIDO)
